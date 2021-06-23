@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Item from "./Item";
 import React from "react";
 import Loading from  './Loading';
+
 function App() {
  
   const [loading, setLoading] = useState(true)
@@ -41,16 +42,40 @@ function App() {
   console.log(tours.result);
     return (
 
-      <div className="app">
-                {  
-        tours.result.map((item)=>
-        {
-         return (<Item item={item}></Item>);
-        })
-      }
+      <div className="container">
+        
+        <table className="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        
+                        <td>Start</td>
+                        <td>Length </td>
+                        <td> Status </td>
 
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                {
+                          tours.result.map((item)=>
+                        {
+                        return <tr> <Item item={item} /></tr> ;
+                        })
+                      }
+     
+                  </tbody> 
+
+            </table>
+    
       </div>
     );
 }
 
 export default App;
+// {
+//   tours.result.map((item)=>
+//   {
+//   return (<tr> <Item item={item} /></tr>);
+//   })
+// }

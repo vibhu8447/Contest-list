@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 function Item(item) {
-
+            console.log(item.item);
               function timeConverter(UNIX_timestamp){
                 var a = new Date(UNIX_timestamp * 1000);
                 var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -36,16 +36,32 @@ function Item(item) {
             }
         }
         console.log(timeConverter(item.item.startTimeSeconds),item.item.name);
+        function website(weburl)
+        {
 
+            
+        }
     return (
         <>
-        {/* <h1> helo {item.item.id}</h1> */}
+        {/* <h1> helo {item.item.id}</h1>
         <h1> helo {item.item.name}</h1>
         <h1> helo {item.item.phase}</h1>
 
         <h1>  hello time {timeConverter(item.item.startTimeSeconds)}</h1>
         <h1>  duration of contest {durationofcontest(item.item.durationSeconds)}</h1>
-
+        <button className="btn btn-primary">click me </button> */}
+        
+        
+                        
+                        <td> <a target="_blank" href="https://codeforces.com/contests"> {item.item.name}</a></td>
+                        
+                        
+                        <td>{timeConverter(item.item.startTimeSeconds)}</td>
+                        <td>{durationofcontest(item.item.durationSeconds)}</td>
+                        <td>{item.item.phase}</td>
+                        
+        
+        
         </>
 );
 }
