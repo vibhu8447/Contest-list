@@ -6,7 +6,7 @@ import Loading from  './Loading';
 function App() {
  
   const [loading, setLoading] = useState(true)
-  const [tours, setTours] = useState([])
+  const [tours, setTours] = useState([]);
 
   const url ='https://codeforces.com/api/contest.list?gym=false';
 
@@ -16,9 +16,9 @@ function App() {
     try {
 
       const response = await fetch(url);
-      const tours = await response.json();
+      const tour = await response.json();
       setLoading(false);
-      setTours(tours);
+      setTours(tour);
     } 
     catch (error) {
       setLoading(false)
@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     fetchTours();
-    console.log(tours.result);
+   
   },[]);
 
   if (loading) {
@@ -38,11 +38,15 @@ function App() {
       </main>
     )
   }
-  if(loading==false)
+  if(loading===false)
   {
     console.log(tours.result);
     return (
 
+      <>
+      <div className="display-1">
+      <h1 className="display-1 text-center bold"> Codeforces Contest List</h1>
+      </div>
       <div className="container">
         
         <table className="table table-striped">
@@ -58,18 +62,21 @@ function App() {
                     
                 </thead>
                 <tbody>
+
                 {
-                          tours.result.map((item)=>
-                        {
-                        return <tr> <Item item={item} /></tr> ;
-                        })
-                      }
-     
+                
+                tours.result.map((item)=>
+                  {
+                      return <tr> <Item item={item} /></tr> ;
+                  })
+              }
+              
                   </tbody> 
 
             </table>
     
       </div>
+      </>
     );
   }
   

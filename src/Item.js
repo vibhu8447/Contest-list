@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 function Item(item) {
             console.log(item.item);
               function timeConverter(UNIX_timestamp){
@@ -17,41 +16,43 @@ function Item(item) {
         function durationofcontest(timegap)
         {
             var timestamp = timegap;
-
-            // 2
             var hours = Math.floor(timestamp / 60 / 60);
-            
-            // 37
             var minutes = Math.floor(timestamp / 60) - (hours * 60);
-
-            var res="";
+            
             if(minutes<10)
             {
-
-                return hours +":" +"0"+minutes;
+                var x=hours + ":0" + minutes;
+                
+                return x;
             }
             else
             {
                 return hours + ":" +minutes;
             }
         }
-        console.log(timeConverter(item.item.startTimeSeconds),item.item.name);
-        function website(weburl)
-        {
 
-            
-        }
-   
+
+        
+
+    var getid="";
+    if(item.item.phase==="BEFORE")
+      getid="orange";
+    else if(item.item.phase==="CODING")
+        getid="green"
+    else
+    {
+    getid="red";
+    console.log("redd");
+    }
+
     var url=`https://codeforces.com/contests/${item.item.id}`;
     return (
         <>
             {/*  hint for tommor add /{contest id in the end of href in first td} */}
-            <td> <a target="_blank" href={url}> {item.item.name}</a></td>          
+            <td> <a target="_blank" rel="noreferrer"  href={url}> {item.item.name}</a></td>          
             <td>{timeConverter(item.item.startTimeSeconds)}</td>
             <td>{durationofcontest(item.item.durationSeconds)}</td>
-            <td>{item.item.phase}</td>
-            
-        
+            <td id ={getid}>{item.item.phase}</td>    
         
         </>
 );
