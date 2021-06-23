@@ -43,23 +43,12 @@ function Item(item) {
         }
     return (
         <>
-        {/* <h1> helo {item.item.id}</h1>
-        <h1> helo {item.item.name}</h1>
-        <h1> helo {item.item.phase}</h1>
-
-        <h1>  hello time {timeConverter(item.item.startTimeSeconds)}</h1>
-        <h1>  duration of contest {durationofcontest(item.item.durationSeconds)}</h1>
-        <button className="btn btn-primary">click me </button> */}
-        
-        
-                        
-                        <td> <a target="_blank" href="https://codeforces.com/contests"> {item.item.name}</a></td>
-                        
-                        
-                        <td>{timeConverter(item.item.startTimeSeconds)}</td>
-                        <td>{durationofcontest(item.item.durationSeconds)}</td>
-                        <td>{item.item.phase}</td>
-                        
+            {/*  hint for tommor add /{contest id in the end of href in first td} */}
+            <td> <a target="_blank" href="https://codeforces.com/contests"> {item.item.name}</a></td>          
+            <td>{timeConverter(item.item.startTimeSeconds)}</td>
+            <td>{durationofcontest(item.item.durationSeconds)}</td>
+            <td>{item.item.phase}</td>
+            
         
         
         </>
