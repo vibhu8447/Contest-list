@@ -6,7 +6,8 @@ import Loading from  './Loading';
 function App() {
  
   const [loading, setLoading] = useState(true)
-  const [tours, setTours] = useState([]);
+
+  const [data,setdata]=useState([]);
 
   const url ='https://codeforces.com/api/contest.list?gym=false';
 
@@ -18,7 +19,7 @@ function App() {
       const response = await fetch(url);
       const tour = await response.json();
       setLoading(false);
-      setTours(tour);
+      setdata(tour.result);
     } 
     catch (error) {
       setLoading(false)
@@ -40,7 +41,11 @@ function App() {
   }
   if(loading===false)
   {
-    console.log(tours.result);
+
+    console.log(loading,"ys");
+    
+    console.log(data);
+    
     return (
 
       <>
@@ -65,12 +70,11 @@ function App() {
 
                 {
                 
-                tours.result.map((item)=>
+                data.map((item)=>
                   {
                       return <tr> <Item item={item} /></tr> ;
                   })
               }
-              
                   </tbody> 
 
             </table>
