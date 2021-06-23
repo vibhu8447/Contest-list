@@ -42,9 +42,6 @@ function App() {
   if(loading===false)
   {
 
-    console.log(loading,"ys");
-    
-    console.log(data);
     
     return (
 
@@ -72,7 +69,8 @@ function App() {
                 
                 data.map((item)=>
                   {
-                      return <tr> <Item item={item} /></tr> ;
+                    console.log(item.id);
+                      return <tr> <Item  key={item.id} item={item} /></tr> ;
                   })
               }
                   </tbody> 
