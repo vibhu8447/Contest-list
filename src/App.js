@@ -38,8 +38,9 @@ function App() {
       </main>
     )
   }
-
-  console.log(tours.result);
+  if(loading==false)
+  {
+    console.log(tours.result);
     return (
 
       <div className="container">
@@ -70,12 +71,8 @@ function App() {
     
       </div>
     );
+  }
+  
 }
 
 export default App;
-// {
-//   tours.result.map((item)=>
-//   {
-//   return (<tr> <Item item={item} /></tr>);
-//   })
-// }

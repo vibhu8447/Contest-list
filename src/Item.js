@@ -41,10 +41,12 @@ function Item(item) {
 
             
         }
+   
+    var url=`https://codeforces.com/contests/${item.item.id}`;
     return (
         <>
             {/*  hint for tommor add /{contest id in the end of href in first td} */}
-            <td> <a target="_blank" href="https://codeforces.com/contests"> {item.item.name}</a></td>          
+            <td> <a target="_blank" href={url}> {item.item.name}</a></td>          
             <td>{timeConverter(item.item.startTimeSeconds)}</td>
             <td>{durationofcontest(item.item.durationSeconds)}</td>
             <td>{item.item.phase}</td>
