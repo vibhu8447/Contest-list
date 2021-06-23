@@ -1,6 +1,6 @@
 import React from 'react';
 function Item(item) {
-            console.log(item.item);
+            
               function timeConverter(UNIX_timestamp){
                 var a = new Date(UNIX_timestamp * 1000);
                 var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -22,7 +22,7 @@ function Item(item) {
             if(minutes<10)
             {
                 var x=hours + ":0" + minutes;
-                
+
                 return x;
             }
             else
@@ -42,7 +42,7 @@ function Item(item) {
     else
     {
     getid="red";
-    console.log("redd");
+    
     }
 
     var url=`https://codeforces.com/contests/${item.item.id}`;
