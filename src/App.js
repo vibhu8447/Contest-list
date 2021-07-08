@@ -69,8 +69,8 @@ function App() {
                 
                 data.map((item)=>
                   {
-                    console.log(item.id);
-                      return <tr> <Item  key={item.id} item={item} /></tr> ;
+                   
+                      return <tr> <Item  key={item.name} item={item} /></tr> ;
                   })
               }
                   </tbody> 
